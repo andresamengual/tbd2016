@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Global Usach</title>
+    <!-- Estilos personalizados-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="styles/css/bootstrap.min.css" type="text/css">
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/font-awesome/css/font-awesome.min.css" type="text/css">
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="styles/css/animate.min.css" type="text/css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/css/creative.css" type="text/css">
+
+
+</head>
+
+<body ng-app="angularSpa" id="page-top">
+
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand page-scroll" href="#page-top">Global Usach</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#/home">Inicio</a>
+                </li>
+                  <li>
+                      <a class="page-scroll" href="#/publicaciones">Publicaciones</a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="#/nuevaPublicacion">Nueva Publicación</a>
+                  </li>
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+  </nav>
+  <div ng-view></div>
+
+
+
+
+
+
+
+  <!-- Plugin JavaScript -->
+  <script src="styles/js/wow.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="styles/js/creative.js"></script>
+
+
+  <!-- Recursos de bower-->
+  <!-- build:js js/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- Recursos personales-->
+  <!-- build:js js/scripts.js -->
+  <!-- inject:js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/editarpubliCtrl.js"></script>
+  <script src="scripts/controllers/idpubliCtrl.js"></script>
+  <script src="scripts/controllers/mainCtrl.js"></script>
+  <script src="scripts/controllers/nuevaPublicacionCtrl.js"></script>
+  <script src="scripts/controllers/publicacionesCtrl.js"></script>
+  <!-- endinject -->
+  <!-- endbuild -->
+</body>
+</html>
