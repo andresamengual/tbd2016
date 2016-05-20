@@ -7,9 +7,8 @@
             method: 'GET',
             url: 'http://localhost:8080/proyectotbd2016/publicaciones/buscarpublicacionporid/'+$scope.id,
          }).success(function(data){
-           console.log(data);
-            $scope.publicaciones = data;
-
+           $scope.nombre = data.nombrepublicacion;
+           $scope.descripcion = data.descripcionpublicacion;
         }).error(function(){
             alert("error al cargar publicaciones");
         });
@@ -18,8 +17,8 @@
               method: 'PUT',
               url: 'http://localhost:8080/proyectotbd2016/publicaciones/editarpublicacion/'+$scope.id,
               data: {
-                 "nombrepublicacion":$scope.publicaciones.nombrepublicacion,
-                 "descripcionpublicacion":$scope.publicaciones.descripcionpublicacion
+                 "nombrepublicacion":$scope.nombre,
+                 "descripcionpublicacion":$scope.descripcion
               },
               headers: {'Content-Type': 'application/json'}
             }).then(function(data,status,headers,config){
