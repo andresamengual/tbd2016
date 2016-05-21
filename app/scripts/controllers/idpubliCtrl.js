@@ -33,6 +33,26 @@ angular.module('angularSpa')
           console.log(error);
         });
     }
+    $scope.agregarcomentario = function (){
+      $http({
+          method: 'POST',
+          url: 'http://localhost:8080/proyectotbd2016/comentarios/crearcomentario',
+          data: {
+            "usuario":{"idUsuario":"12"},
+            "publicacion":{"idPublicacion":"7"} ,
+            "textocomentario": $scope.comentario
+          },
+          headers: {'Content-Type': 'application/json'}
+        }).then(function(data,status,headers,config){
+            $scope.status = 'Comentario realizado';
+            alert("Comentario realizado");
+        },
+        function(error,status,headers,config){
+          $scope.status = 'Error al comentar';
+          alert("Error al comentar");
+          console.log(error);
+        });
+    }
 
 
   }]);
