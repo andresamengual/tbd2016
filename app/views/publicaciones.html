@@ -1,6 +1,6 @@
 <div id="cuerpo">
   <h2 id="centrar">Publicaciones</h2>
-  <ul ng-repeat="a in publicaciones | orderBy:'id':true">
+  <ul ng-repeat="a in publicaciones | orderBy:'id':true" id="centrar">
     <a href="#/idpubli/{{a.idPublicacion}}" id="centrar">{{a.nombrepublicacion}}</a>
 	</ul>
 </div>

@@ -1,7 +1,7 @@
 (function(){
     angular.module('angularSpa')
-    .controller('editarpubliCtrl',  ['$scope', '$routeParams', '$http',
-      function($scope, $routeParams, $http){
+    .controller('editarpubliCtrl',  ['$scope', '$routeParams', '$http',  '$location',
+      function($scope, $routeParams, $http, $location){
         $scope.id = $routeParams.id;
         $http({
             method: 'GET',
@@ -24,6 +24,7 @@
             }).then(function(data,status,headers,config){
                 $scope.status = 'Editado Correctamente';
                 alert("Editado Correctamente");
+                $location.path("/idpubli/"+$scope.id);
             },
             function(error,status,headers,config){
               $scope.status = 'Error al editar';
