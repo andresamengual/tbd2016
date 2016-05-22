@@ -1,11 +1,10 @@
-<div ng-controller="idpubliCtrl">
-  <div style="color:red;"></br></br></br></br></br></br>
-      <h1>{{publicaciones.nombrepublicacion}}</h1>
-      <h1>{{publicaciones.descripcionpublicacion}}</h1>
-      <a href="#/editarpubli/{{id}}">Editar</a>
-      <button ng-click="eliminar()" type="submit" class="btn btn-primary btn-lg btn-outline btn-rounded">Eliminar</button>
-      <h1>Comentarios</h1>
-      <input type="text" name="" id="" ng-model="comentario">
-      <button ng-click="agregarcomentario()" type="submit" class="btn btn-primary btn-lg btn-outline btn-rounded">Agregar comentario</button>
-  </div>
+<div ng-controller="idpubliCtrl"  id="cuerpo">
+    <h2 id="centrar">{{publicaciones.nombrepublicacion}}</h2>
+    <h2 id="centrar">{{publicaciones.descripcionpublicacion}}</h2>
+    <a href="#/editarpubli/{{id}}">Editar</a>
+    <button ng-click="eliminar()" type="submit" class="btn btn-primary btn-lg btn-outline btn-rounded">Eliminar</button>
+    <h2 id="centrar">Comentarios</h2>
+    <input type="text" name="" id="" ng-model="comentario">
+    <button ng-click="agregarcomentario()" type="submit" class="btn btn-primary btn-lg btn-outline btn-rounded">
+      Agregar comentario</button>
 </div>

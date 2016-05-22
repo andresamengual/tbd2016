@@ -1,11 +1,14 @@
-<div ng-controller="nuevaPublicacionCtrl as up"></br></br></br></br>
+<div ng-controller="nuevaPublicacionCtrl as up" id="cuerpo">
+  <h2 id="centrar">Nueva publicacion</h2>
   <form role="form" ng-submit="submit()">
   <div class="form-content">
     <div class="form-group">
-      <input type="text" class="form-control input-lg" id="" placeholder="Ingresar nombre" ng-model="nombrepublicacion">
+      <input type="text" class="form-control input-lg"
+      placeholder="Ingresar título de la publicación" ng-model="nombrepublicacion">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control input-lg" id="" placeholder="Ingresar descripción" ng-model="descripcionpublicacion">
+      <textarea  rows="8" cols="40" class="form-control input-lg" id=""
+      placeholder="Ingresar descripción de la publicación" ng-model="descripcionpublicacion"></textarea>
     </div>
     <div class="form-group text-center">
       <button ng-click="agregar()" type="submit" class="btn btn-primary btn-lg btn-outline btn-rounded">Agregar</button>
