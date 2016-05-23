@@ -17,8 +17,10 @@
               method: 'PUT',
               url: 'http://localhost:8080/proyectotbd2016/publicaciones/editarpublicacion/'+$scope.id,
               data: {
+                "usuario":{"idUsuario":"1"},
                  "nombrepublicacion":$scope.nombre,
-                 "descripcionpublicacion":$scope.descripcion
+                 "descripcionpublicacion":$scope.descripcion,
+                 "prioridadPublicacion":{"idPrioridadpublicacion":"1"}
               },
               headers: {'Content-Type': 'application/json'}
             }).then(function(data,status,headers,config){

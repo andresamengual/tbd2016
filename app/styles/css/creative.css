@@ -3,6 +3,28 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+label{
+  color:grey;
+  font-size: 32px;
+}
+input[type = "radio"]{
+  display:none;
+}
+.clasificacion{
+      direction: rtl;/* right to left */
+
+      unicode-bidi: bidi-override;/* bidi de bidireccional */
+}
+label:hover{
+  color:orange;
+}
+label:hover ~ label{
+  color:orange;
+}
+input[type = "radio"]:checked ~ label{
+  color:orange;
+}
+
  .esquinas {
      -moz-border-radius: 4px 4px 4px 4px;
  }

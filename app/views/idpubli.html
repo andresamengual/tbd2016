@@ -5,6 +5,23 @@
     <a href="#/editarpubli/{{id}}" id="link">Editar publicación</a>
     <button ng-click="eliminar()" type="submit" id="boton" class="btn btn-default">Eliminar publicación</button>
     </div>
+    <h3 id="centrar">Puntuación de la publicación</h3>
+    <form id="centrar">
+    <p class="clasificacion">
+      <input ng-click="valorar()" id="radio1" type="radio" name="estrellas" value="5" ng-model="valoracion"><!--
+      --><label for="radio1">★</label><!--
+      --><input ng-click="valorar()" id="radio2" type="radio" name="estrellas" value="4" ng-model="valoracion"><!--
+      --><label for="radio2">★</label><!--
+      --><input  ng-click="valorar()" id="radio3" type="radio" name="estrellas" value="3" ng-model="valoracion"><!--
+      --><label for="radio3">★</label><!--
+      --><input ng-click="valorar()" id="radio4" type="radio" name="estrellas" value="2" ng-model="valoracion"><!--
+      --><label for="radio4">★</label><!--
+      --><input ng-click="valorar()" id="radio5" type="radio" name="estrellas" value="1" ng-model="valoracion"><!--
+      --><label for="radio5">★</label>
+    </p>
+  </form>
+
+
     <h3 id="centrar">Comentarios</h3>
     <ul ng-repeat="a in comentarios | orderBy:'id':false">
       <h5 ng-show="false">{{numero = a.idComentario}}</h5>

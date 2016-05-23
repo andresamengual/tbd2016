@@ -17,7 +17,7 @@
               method: 'PUT',
               url: 'http://localhost:8080/proyectotbd2016/comentarios/editarcomentario/'+$scope.id,
               data: {
-                "usuario":{"idUsuario":"23"},
+                "usuario":{"idUsuario":"1"},
                 "publicacion":{"idPublicacion":num} ,
                  "textocomentario":$scope.textocomentario,
               },
