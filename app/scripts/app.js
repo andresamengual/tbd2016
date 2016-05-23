@@ -25,6 +25,10 @@
               templateUrl: 'views/editarpubli.html',
               controller: 'editarpubliCtrl'
           })
+          .when('/editarcomentario/:id', {
+              templateUrl: 'views/editarcomentario.html',
+              controller: 'editarcomentarioCtrl'
+          })
         .otherwise({
             redirectTo: '/home'
           });

@@ -3,6 +3,55 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+ .esquinas {
+     -moz-border-radius: 4px 4px 4px 4px;
+ }
+
+ .contenido-comentario {
+     border: 1px solid #191919;
+     color: black;
+     font-weight: bold;
+ }
+
+ .fondo_mensaje {
+ 	background-color: #eeeeee;
+     height: 100%;
+     width: 320px;
+     overflow: hidden;
+     padding: 10px 4px 0 !important;
+     margin-left: 300px;
+ }
+
+ .texto_mensaje {
+ 	font-family: "Lucida Sans Unicode";
+ 	font-size: 12px;
+ 	text-align: justify;
+ 	padding-top: 5px;
+ 	padding-left: 0px;
+ 	padding-right: 0px;
+ 	padding-bottom: 10px;
+ }
+
+ #link{
+    color: inherit!important;
+    text-decoration: none;
+    background-color: white;
+  }
+  #link_comentario{
+     color: inherit!important;
+     text-decoration: none;
+     background-color: #eeeeee;
+   }
+#boton{
+  text-decoration: none;
+  background-color: white;
+  color: red;
+}
+#boton_comentario{
+  text-decoration: none;
+  background-color: #eeeeee;
+  color: red;
+}
 #centrar{
   text-align: center;
 }
@@ -379,7 +428,7 @@ body {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(../images/eao.jpg) no-repeat bottom center scroll;
+    background: url(../images/usach.jpg) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;

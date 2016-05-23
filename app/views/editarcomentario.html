@@ -1,0 +1,13 @@
+<div ng-controller="editarcomentarioCtrl as up" id="cuerpo">
+  <h2 id="centrar">Editar comentario</h2>
+  <form role="form" ng-submit="submit()">
+  <div class="form-content">
+    <div class="form-group">
+      <textarea name="name" rows="8" cols="40" type="text" class="form-control input-lg" id="" ng-model="textocomentario"></textarea>
+    </div>
+    <div class="form-group text-center">
+      <h1 ng-show="false">{{num = publica.idPublicacion}}</h1>
+      <button ng-click="actualizar(num)" type="submit" class="btn btn-primary btn-lg btn-outline btn-rounded">Actualizar</button>
+    </div>
+  </form>
+</div>

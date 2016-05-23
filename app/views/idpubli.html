@@ -1,17 +1,29 @@
 <div ng-controller="idpubliCtrl"  id="cuerpo">
     <h2 id="centrar">{{publicaciones.nombrepublicacion}}</h2>
     <h4 id="centrar">{{publicaciones.descripcionpublicacion}}</h4>
-    <a href="#/editarpubli/{{id}}">Edita publicación</a>
-    <button ng-click="eliminar()" type="submit" class="btn btn-primary btn-lg btn-outline btn-rounded">Eliminar publicación</button>
+    <div id="centrar">
+    <a href="#/editarpubli/{{id}}" id="link">Editar publicación</a>
+    <button ng-click="eliminar()" type="submit" id="boton" class="btn btn-default">Eliminar publicación</button>
+    </div>
     <h3 id="centrar">Comentarios</h3>
     <ul ng-repeat="a in comentarios | orderBy:'id':false">
-      <h5 id="centrar">{{a.textocomentario}}</h5>
       <h5 ng-show="false">{{numero = a.idComentario}}</h5>
-      <button ng-click="eliminarcomentario(numero)" type="submit" class="btn btn-primary btn-lg btn-outline btn-rounded">
-        Eliminar comentario</button>
+      <h5 id="centrar" class="contenido-comentario fondo_mensaje texto_mensaje esquinas">{{a.textocomentario}}</br></br>
+      <a href="#/editarcomentario/{{numero}}" id="link_comentario">Editar comentario</a>
+      <button ng-click="eliminarcomentario(numero)" type="submit" id="boton_comentario" class="btn btn-default">
+        Eliminar comentario</button></h5>
     </ul>
-    <input type="text" name="" id="" ng-model="comentario">
-    <button ng-click="agregarcomentario()" type="submit" class="btn btn-primary btn-lg btn-outline btn-rounded">
-      Agregar comentario</button>
 
+
+    <form role="form" ng-submit="submit()">
+      <div class="form-content">
+        <div class="form-group text-center">
+          <textarea id="centrarcomentario" name="name" rows="8" cols="40" type="text" ng-model="comentario"></textarea>
+        </div>
+        <div class="form-group text-center">
+          <button ng-click="agregarcomentario()" type="submit" class="btn btn-primary btn-outline btn-rounded">
+            Agregar comentario</button>
+        </div>
+      </div>
+    </form>
 </div>

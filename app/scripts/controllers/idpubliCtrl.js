@@ -2,11 +2,10 @@
 
 (function(){
 angular.module('angularSpa')
-.controller('idpubliCtrl', ['$scope', '$routeParams', '$http',
-  function($scope, $routeParams, $http) {
+.controller('idpubliCtrl', ['$scope', '$routeParams', '$http', '$location',
+  function($scope, $routeParams, $http, $location) {
     $scope.id = $routeParams.id;
     $scope.numero = 0;
-
 
     $scope.mostrarpublicaciones = function (){
       $http({
@@ -29,7 +28,7 @@ angular.module('angularSpa')
           headers: {'Content-Type': 'application/json'}
         }).then(function(data,status,headers,config){
             $scope.status = 'eliminado Correctamente';
-            alert("Publicacion eliminada correctamente");
+            $location.path("/publicaciones");
         },
         function(error,status,headers,config){
           $scope.status = 'Error al eliminar';
@@ -44,7 +43,6 @@ angular.module('angularSpa')
           url: 'http://localhost:8080/proyectotbd2016/publicaciones/buscarcomentariosdeunapublicacion/'+$scope.id,
        }).success(function(data){
           $scope.comentarios = data;
-          console.log($scope.comentarios[0]);
       }).error(function(){
           alert("error al cargar comentarios");
       });
@@ -55,14 +53,13 @@ angular.module('angularSpa')
           method: 'POST',
           url: 'http://localhost:8080/proyectotbd2016/comentarios/crearcomentario',
           data: {
-            "usuario":{"idUsuario":"16"},
+            "usuario":{"idUsuario":"23"},
             "publicacion":{"idPublicacion":$scope.id} ,
             "textocomentario": $scope.comentario
           },
           headers: {'Content-Type': 'application/json'}
         }).then(function(data,status,headers,config){
             $scope.status = 'Comentario realizado';
-            alert("Comentario realizado");
             $scope.mostrarcomentario();
             $scope.comentario = "";
         },
@@ -83,7 +80,6 @@ angular.module('angularSpa')
           headers: {'Content-Type': 'application/json'}
         }).then(function(data,status,headers,config){
             $scope.status = 'Comentario realizado';
-            alert("Comentario eliminado");
             $scope.mostrarcomentario();
         },
         function(error,status,headers,config){

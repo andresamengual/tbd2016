@@ -1,29 +1,30 @@
 (function(){
     angular.module('angularSpa')
-    .controller('editarpubliCtrl',  ['$scope', '$routeParams', '$http',  '$location',
+    .controller('editarcomentarioCtrl',  ['$scope', '$routeParams', '$http',  '$location',
       function($scope, $routeParams, $http, $location){
         $scope.id = $routeParams.id;
         $http({
             method: 'GET',
-            url: 'http://localhost:8080/proyectotbd2016/publicaciones/buscarpublicacionporid/'+$scope.id,
+            url: 'http://localhost:8080/proyectotbd2016/comentarios/buscarcomentarioporid/'+$scope.id,
          }).success(function(data){
-           $scope.nombre = data.nombrepublicacion;
-           $scope.descripcion = data.descripcionpublicacion;
+           $scope.textocomentario = data.textocomentario;
+           $scope.publica = data.publicacion;
         }).error(function(){
-            alert("error al cargar publicaciones");
+            alert("error al cargar el comentario");
         });
-        $scope.actualizar = function (){
+        $scope.actualizar = function (num){
           $http({
               method: 'PUT',
-              url: 'http://localhost:8080/proyectotbd2016/publicaciones/editarpublicacion/'+$scope.id,
+              url: 'http://localhost:8080/proyectotbd2016/comentarios/editarcomentario/'+$scope.id,
               data: {
-                 "nombrepublicacion":$scope.nombre,
-                 "descripcionpublicacion":$scope.descripcion
+                "usuario":{"idUsuario":"23"},
+                "publicacion":{"idPublicacion":num} ,
+                 "textocomentario":$scope.textocomentario,
               },
               headers: {'Content-Type': 'application/json'}
             }).then(function(data,status,headers,config){
                 $scope.status = 'Editado Correctamente';
-                $location.path("/idpubli/"+$scope.id);
+                $location.path("/idpubli/"+num);
             },
             function(error,status,headers,config){
               $scope.status = 'Error al editar';
