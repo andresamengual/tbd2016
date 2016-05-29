@@ -3,6 +3,16 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+ #borde{
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-color: black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+ }
+
 label{
   color:grey;
   font-size: 32px;
