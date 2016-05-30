@@ -1,6 +1,6 @@
 <div ng-controller="idpubliCtrl"  id="cuerpo">
     <h2 id="centrar">{{publicaciones.nombrepublicacion}}</h2>
-    <h4 id="centrar">{{publicaciones.descripcionpublicacion}}</h4>
+    <h4 id="centrar" ng-bind-html="publicaciones.descripcionpublicacion"></h4>
     <div id="centrar">
     <a href="#/editarpubli/{{id}}" id="link">Editar publicación</a>
     <button ng-click="eliminar()" type="submit" id="boton" class="btn btn-default">Eliminar publicación</button>

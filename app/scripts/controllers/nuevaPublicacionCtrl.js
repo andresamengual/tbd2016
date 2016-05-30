@@ -1,14 +1,16 @@
 (function(){
-    angular.module('angularSpa')
-    .controller('nuevaPublicacionCtrl', ['$scope', '$http',  '$location',
+    var a = angular.module('angularSpa');
+    a.controller('nuevaPublicacionCtrl', ['$scope', '$http',  '$location',
       function($scope,$http, $location){
+
+
         $scope.agregar = function (){
           $http({
               method: 'POST',
               url: 'http://localhost:8080/proyectotbd2016/publicaciones/crearpublicacion',
               data: {
-                "usuario":{"idUsuario":"1"},
-                 "prioridadPublicacion":{"idPrioridadpublicacion":"1"},
+                "usuario":{"idUsuario":"4"},
+                 "prioridadPublicacion":{"idPrioridadpublicacion":"6"},
                  "nombrepublicacion":$scope.nombrepublicacion,
                  "descripcionpublicacion":$scope.descripcionpublicacion
               },

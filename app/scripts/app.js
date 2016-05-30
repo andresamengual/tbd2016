@@ -1,8 +1,9 @@
 (function(){
 
     angular.module('angularSpa', [
-    'ngRoute'
+    'ngRoute','angularTrix', 'ngSanitize'
     ])
+
     .config(function($routeProvider){
         $routeProvider
         .when('/home', {
