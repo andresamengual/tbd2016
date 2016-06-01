@@ -19,7 +19,7 @@
         </div>
         <div class="text-muted pull-right btn-group-xs">
           <button ng-click="eliminar()" type="submit" class="btn btn-danger text-muted pull-right">
-            <i class="fa fa-warning"></i> Eliminar publicación</button>
+            <i class="fa fa-times"></i> Eliminar publicación</button>
           <a href="#/editarpubli/{{id}}" class="btn btn-warning text-muted pull-right"> Editar publicación</a>
         </div>
         <h2>{{publicaciones.nombrepublicacion}}</h2></br>
@@ -32,24 +32,27 @@
   </ul>
 </div>
 
-<h3 id="centrar">Puntuación de la publicación</h3>
-<form id="centrar">
-<p class="clasificacion">
-  <input ng-click="valorar()" id="radio1" type="radio" name="estrellas" value="5" ng-model="valoracion"><!--
-  --><label for="radio1">★</label><!--
-  --><input ng-click="valorar()" id="radio2" type="radio" name="estrellas" value="4" ng-model="valoracion"><!--
-  --><label for="radio2">★</label><!--
-  --><input  ng-click="valorar()" id="radio3" type="radio" name="estrellas" value="3" ng-model="valoracion"><!--
-  --><label for="radio3">★</label><!--
-  --><input ng-click="valorar()" id="radio4" type="radio" name="estrellas" value="2" ng-model="valoracion"><!--
-  --><label for="radio4">★</label><!--
-  --><input ng-click="valorar()" id="radio5" type="radio" name="estrellas" value="1" ng-model="valoracion"><!--
-  --><label for="radio5">★</label>
-</p>
-</form>
+<div ng-show="mostrar">
+  <h3 id="centrar">Puntuación de la publicación</h3>
+  <form id="centrar">
+    <p class="clasificacion">
+      <input ng-click="valorar()" id="radio1" type="radio" name="estrellas" value="5" ng-model="valoracion"><!--
+      --><label for="radio1">★</label><!--
+      --><input ng-click="valorar()" id="radio2" type="radio" name="estrellas" value="4" ng-model="valoracion"><!--
+      --><label for="radio2">★</label><!--
+      --><input  ng-click="valorar()" id="radio3" type="radio" name="estrellas" value="3" ng-model="valoracion"><!--
+      --><label for="radio3">★</label><!--
+      --><input ng-click="valorar()" id="radio4" type="radio" name="estrellas" value="2" ng-model="valoracion"><!--
+      --><label for="radio4">★</label><!--
+      --><input ng-click="valorar()" id="radio5" type="radio" name="estrellas" value="1" ng-model="valoracion"><!--
+      --><label for="radio5">★</label>
+    </p>
+  </form>
+</div>
 
-
-
+<div>
+  <h1 id="centrar" ng-hide="mostrar">Ya haz valorado</h1>
+</div>
 
 <div class="container">
   <div class="row">
@@ -90,15 +93,48 @@
             </li>
             <div class="clearfix"></div>
             <hr>
-
               <textarea froala ng-model="comentario"></textarea>
+              <br>
             <button ng-click="agregarcomentario()" type="submit" class="btn btn-primary pull-right btn-outline btn-rounded">
               Agregar comentario</button>
-
           </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 text-center">
+                        <h1 class="rating-num">
+                            {{valoraciones}}</h1>
+                        <div class="rating">
+                            <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+                            </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+                            </span><span class="glyphicon glyphicon-star-empty"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </div>
