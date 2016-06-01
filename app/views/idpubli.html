@@ -1,46 +1,102 @@
 <div ng-controller="idpubliCtrl"  id="cuerpo">
-    <h2 id="centrar">{{publicaciones.nombrepublicacion}}</h2>
-    <h4 id="centrar" ng-bind-html="publicaciones.descripcionpublicacion"></h4>
-    <div id="centrar">
-    <a href="#/editarpubli/{{id}}" id="link">Editar publicación</a>
-    <button ng-click="eliminar()" type="submit" id="boton" class="btn btn-default">Eliminar publicación</button>
-    </div>
-    <h3 id="centrar">Puntuación de la publicación</h3>
-    <form id="centrar">
-    <p class="clasificacion">
-      <input ng-click="valorar()" id="radio1" type="radio" name="estrellas" value="5" ng-model="valoracion"><!--
-      --><label for="radio1">★</label><!--
-      --><input ng-click="valorar()" id="radio2" type="radio" name="estrellas" value="4" ng-model="valoracion"><!--
-      --><label for="radio2">★</label><!--
-      --><input  ng-click="valorar()" id="radio3" type="radio" name="estrellas" value="3" ng-model="valoracion"><!--
-      --><label for="radio3">★</label><!--
-      --><input ng-click="valorar()" id="radio4" type="radio" name="estrellas" value="2" ng-model="valoracion"><!--
-      --><label for="radio4">★</label><!--
-      --><input ng-click="valorar()" id="radio5" type="radio" name="estrellas" value="1" ng-model="valoracion"><!--
-      --><label for="radio5">★</label>
-    </p>
-  </form>
 
 
-    <h3 id="centrar">Comentarios</h3>
-    <ul ng-repeat="a in comentarios | orderBy:'id':false">
-      <h5 ng-show="false">{{numero = a.idComentario}}</h5>
-      <h5 id="centrar" class="contenido-comentario fondo_mensaje texto_mensaje esquinas">{{a.textocomentario}}</br></br>
-      <a href="#/editarcomentario/{{numero}}" id="link_comentario">Editar comentario</a>
-      <button ng-click="eliminarcomentario(numero)" type="submit" id="boton_comentario" class="btn btn-default">
-        Eliminar comentario</button></h5>
-    </ul>
-
-
-    <form role="form" ng-submit="submit()">
-      <div class="form-content">
-        <div class="form-group text-center">
-          <textarea id="centrarcomentario" name="name" rows="8" cols="40" type="text" ng-model="comentario"></textarea>
+<div class="container">
+  <ul class="media-list forum">
+    <!-- Forum Post -->
+    <li class="media well">
+      <div class="pull-left user-info" href="#">
+        <img class="avatar img-circle img-thumbnail" src="http://snipplicious.com/images/guest.png"
+          width="64" alt="Generic placeholder image">
+        <strong><a href="user.html">Autor</a></strong>
+        <small>Estudiante</small>
+        <br>
+      </div>
+      <div class="media-body">
+        <!-- Post Info Buttons -->
+        <div class="forum-post-panel btn-group btn-group-xs">
+          <a href="#" class="btn btn-default"><i class="fa fa-clock-o"></i>Fecha de publicacion</a>
+          <a href="#/editarpubli/{{id}}" class="btn btn-warning"> Editar publicación</a>
+          <button ng-click="eliminar()" type="submit" class="btn btn-danger"><i class="fa fa-warning"></i> Eliminar publicación</button>
         </div>
-        <div class="form-group text-center">
-          <button ng-click="agregarcomentario()" type="submit" class="btn btn-primary btn-outline btn-rounded">
-            Agregar comentario</button>
+        <h2>{{publicaciones.nombrepublicacion}}</h2></br>
+        <h1 ng-show="false">{{n = publicaciones.descripcionpublicacion}}</h1>
+        <td><div ng-bind-html="deliberatelyTrustDangerousSnippet(n)"></div></td>
+      </div>
+    </li>
+    <!-- Forum Post END -->
+    <!-- Forum Post -->
+  </ul>
+</div>
+
+<h3 id="centrar">Puntuación de la publicación</h3>
+<form id="centrar">
+<p class="clasificacion">
+  <input ng-click="valorar()" id="radio1" type="radio" name="estrellas" value="5" ng-model="valoracion"><!--
+  --><label for="radio1">★</label><!--
+  --><input ng-click="valorar()" id="radio2" type="radio" name="estrellas" value="4" ng-model="valoracion"><!--
+  --><label for="radio2">★</label><!--
+  --><input  ng-click="valorar()" id="radio3" type="radio" name="estrellas" value="3" ng-model="valoracion"><!--
+  --><label for="radio3">★</label><!--
+  --><input ng-click="valorar()" id="radio4" type="radio" name="estrellas" value="2" ng-model="valoracion"><!--
+  --><label for="radio4">★</label><!--
+  --><input ng-click="valorar()" id="radio5" type="radio" name="estrellas" value="1" ng-model="valoracion"><!--
+  --><label for="radio5">★</label>
+</p>
+</form>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          Comentarios
+        </div>
+        <div class="panel-body comments">
+          <ul class="media-list">
+            <li class="media" ng-repeat="a in comentarios | orderBy:'id':false">
+              <div class="comment">
+                <a href="#" class="pull-left">
+                <img src="http://lorempixel.com/60/60/animals/?sf5saf" alt="" class="img-circle">
+                </a>
+                <div class="media-body">
+                  <strong class="text-success">Autor</strong>
+                  <span class="text-muted">
+                  <small class="text-muted">| Estudiante |</small>
+                  <span class="text-muted">
+                  <small class="text-muted">Fecha de publicación</small>
+                  </span>
+                  <h5 ng-show="false">{{numero = a.idComentario}}</h5>
+                  <span class="text-muted pull-right">
+                  <small class="btn btn-danger btn-xs" ng-click="eliminarcomentario(numero)" type="submit">
+                  <i class="fa fa-times"></i> Eliminar</small>
+                  </span>
+                  <span class="text-muted pull-right">
+                  <a class="btn btn-warning btn-xs" href="#/editarcomentario/{{numero}}"></i> Editar</a>
+                  </span>
+                  <p>
+                    {{a.textocomentario}}
+                  </p>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </li>
+            <div class="clearfix"></div>
+            <hr>
+            <form role="form" ng-submit="submit()">
+            <textarea  placeholder="Escribe un comentario" class="form-control"  name="name" rows="5" type="text"
+            ng-model="comentario"></textarea>
+            <br>
+            <button ng-click="agregarcomentario()" type="submit" class="btn btn-primary pull-right btn-outline btn-rounded">
+              Agregar comentario</button>
+            </form>
+          </ul>
         </div>
       </div>
-    </form>
+    </div>
+  </div>
+</div>
 </div>

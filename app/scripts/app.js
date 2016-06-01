@@ -1,8 +1,12 @@
 (function(){
 
     angular.module('angularSpa', [
-    'ngRoute','angularTrix', 'ngSanitize'
+    'ngRoute', 'froala', 'ngSanitize'
     ])
+    .value('froalaConfig', {
+    toolbarInline: false,
+    language: 'es'
+    })
 
     .config(function($routeProvider){
         $routeProvider

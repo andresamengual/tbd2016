@@ -1,8 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="utf-8" Content-Type = "text/html">
-
+  <meta charset="utf-8">
   <title>Global Usach</title>
 
     <!-- Estilos personalizados-->
@@ -17,11 +16,35 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles/css/creative.css" type="text/css">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/trix/0.9.2/trix.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/trix/0.9.2/trix.js"></script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.js"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <!-- Include Font Awesome. -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+  	<!-- Include Froala Editor styles -->
+    <link rel="stylesheet" href="styles/froala/css/froala_editor.min.css" />
+    <link rel="stylesheet" href="styles/froala/css/froala_style.min.css" />
+  	<!-- Include Froala Editor Plugins styles -->
+    <link rel="stylesheet" href="styles/froala/css/plugins/char_counter.css">
+    <link rel="stylesheet" href="styles/froala/css//plugins/code_view.css">
+    <link rel="stylesheet" href="styles/froala/css/plugins/colors.css">
+    <link rel="stylesheet" href="styles/froala/css/plugins/emoticons.css">
+    <link rel="stylesheet" href="styles/froala/css/plugins/fullscreen.css">
+    <link rel="stylesheet" href="styles/froala/css/plugins/line_breaker.css">
+    <link rel="stylesheet" href="styles/froala/css/plugins/table.css">
+
+
+
+
+
+
+
+
+
+
+
 
 
 </head>
@@ -59,6 +82,7 @@
       </div>
       <!-- /.container-fluid -->
   </nav>
+
   <div ng-view></div>
 
 
@@ -96,8 +120,39 @@
   <!-- endinject -->
   <!-- endbuild -->
 
-    <script src="styles/angular-trix.js"></script>
 
 
+
+
+
+
+
+  <!-- Include Froala Editor -->
+  <script src="styles/froala/js/froala_editor.min.js"></script>
+  <!-- Include Froala Editor Plugins -->
+  <script src="styles/froala/js/plugins/align.min.js"></script>
+  <script src="styles/froala/js/plugins/char_counter.min.js"></script>
+  <script src="styles/froala/js/plugins/code_beautifier.min.js"></script>
+  <script src="styles/froala/js/plugins/code_view.min.js"></script>
+  <script src="styles/froala/js/plugins/colors.min.js"></script>
+  <script src="styles/froala/js/plugins/entities.min.js"></script>
+  <script src="styles/froala/js/plugins/font_family.min.js"></script>
+  <script src="styles/froala/js/plugins/font_size.min.js"></script>
+  <script src="styles/froala/js/plugins/fullscreen.min.js"></script>
+  <script src="styles/froala/js/plugins/inline_style.min.js"></script>
+  <script src="styles/froala/js/plugins/line_breaker.min.js"></script>
+  <script src="styles/froala/js/plugins/link.min.js"></script>
+  <script src="styles/froala/js/plugins/lists.min.js"></script>
+  <script src="styles/froala/js/plugins/paragraph_format.min.js"></script>
+  <script src="styles/froala/js/plugins/paragraph_style.min.js"></script>
+  <script src="styles/froala/js/plugins/quote.min.js"></script>
+  <script src="styles/froala/js/plugins/save.min.js"></script>
+  <script src="styles/froala/js/plugins/table.min.js"></script>
+  <!-- End Froala -->
+  <script src="styles/angular-froala.js"></script>
+  <!-- Include the language file. -->
+<script src='styles/froala/js/languages/es.js'></script>
+
+<script src="styles/angular-sanitize.js"></script>
 </body>
 </html>

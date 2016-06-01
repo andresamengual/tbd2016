@@ -2,11 +2,14 @@
 
 (function(){
 angular.module('angularSpa')
-.controller('idpubliCtrl', ['$scope', '$routeParams', '$http', '$location',
-  function($scope, $routeParams, $http, $location) {
+.controller('idpubliCtrl', ['$scope', '$routeParams', '$http', '$location', '$sce',
+  function($scope, $routeParams, $http, $location, $sce) {
     $scope.id = $routeParams.id;
     $scope.numero = 0;
 
+    $scope.deliberatelyTrustDangerousSnippet = function(n) {
+           return $sce.trustAsHtml(n);
+    };
 
     $scope.mostrarpublicaciones = function (){
       $http({
@@ -54,7 +57,7 @@ angular.module('angularSpa')
           method: 'POST',
           url: 'http://localhost:8080/proyectotbd2016/comentarios/crearcomentario',
           data: {
-            "usuario":{"idUsuario":"1"},
+            "usuario":{"idUsuario":"6"},
             "publicacion":{"idPublicacion":$scope.id} ,
             "textocomentario": $scope.comentario
           },

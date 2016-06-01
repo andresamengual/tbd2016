@@ -84,7 +84,7 @@
   font-weight: normal;
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "NotoColorEmoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
   display: inline;
-  line-height: 0;
+  line-height: 10;
 }
 .fr-view span.fr-emoticon.fr-emoticon-img {
   background-repeat: no-repeat !important;

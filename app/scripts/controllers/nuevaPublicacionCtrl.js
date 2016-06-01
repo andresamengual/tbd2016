@@ -3,14 +3,13 @@
     a.controller('nuevaPublicacionCtrl', ['$scope', '$http',  '$location',
       function($scope,$http, $location){
 
-
         $scope.agregar = function (){
           $http({
               method: 'POST',
               url: 'http://localhost:8080/proyectotbd2016/publicaciones/crearpublicacion',
               data: {
-                "usuario":{"idUsuario":"4"},
-                 "prioridadPublicacion":{"idPrioridadpublicacion":"6"},
+                "usuario":{"idUsuario":"6"},
+                 "prioridadPublicacion":{"idPrioridadpublicacion":"8"},
                  "nombrepublicacion":$scope.nombrepublicacion,
                  "descripcionpublicacion":$scope.descripcionpublicacion
               },

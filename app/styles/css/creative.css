@@ -17,6 +17,47 @@
   margin-bottom: 50px;
  }
 
+
+ Select all
+ .container {
+     margin-top: 60px;
+ }
+ .comments ul ul {
+     margin-left: 60px;
+ }
+ .comments .comment img {
+     margin-right: 20px;
+ }
+ .comments .comment {
+     padding: 6px;
+ }
+ .comments .comment:hover {
+     background: #eee;
+ }
+
+ .forum .forum-post-panel {
+     margin-bottom: 1em;
+ }
+
+ .forum.media-list li img.avatar {
+     display: block;
+     margin: 0 auto;
+ }
+
+ .forum.media-list li .user-info {
+     text-align: center;
+     width: 8em;
+ }
+
+ @media (max-width: 760px) {
+     .forum.media-list li .user-info {
+         float: none;
+         width: 100%;
+         margin-bottom: 1em;
+     }
+ }
+
+
 label{
   color:grey;
   font-size: 32px;

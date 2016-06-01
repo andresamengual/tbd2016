@@ -9,7 +9,7 @@ this.getData = function(callbackFunc) {
      }).success(function(data){
         callbackFunc(data);
     }).error(function(){
-        alert("error al cargar publicaciones");
+        
     });
  }
 });
