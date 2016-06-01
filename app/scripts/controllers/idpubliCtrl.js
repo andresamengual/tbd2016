@@ -11,6 +11,11 @@ angular.module('angularSpa')
            return $sce.trustAsHtml(n);
     };
 
+    $scope.funcion2 = function(z) {
+           return $sce.trustAsHtml(z);
+    };
+
+
     $scope.mostrarpublicaciones = function (){
       $http({
           method: 'GET',
@@ -57,7 +62,7 @@ angular.module('angularSpa')
           method: 'POST',
           url: 'http://localhost:8080/proyectotbd2016/comentarios/crearcomentario',
           data: {
-            "usuario":{"idUsuario":"6"},
+            "usuario":{"idUsuario":"7"},
             "publicacion":{"idPublicacion":$scope.id} ,
             "textocomentario": $scope.comentario
           },

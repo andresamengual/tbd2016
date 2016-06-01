@@ -8,16 +8,19 @@
       <div class="pull-left user-info" href="#">
         <img class="avatar img-circle img-thumbnail" src="http://snipplicious.com/images/guest.png"
           width="64" alt="Generic placeholder image">
-        <strong><a href="user.html">Autor</a></strong>
+        <strong>Autor</a></strong>
         <small>Estudiante</small>
         <br>
       </div>
       <div class="media-body">
         <!-- Post Info Buttons -->
         <div class="forum-post-panel btn-group btn-group-xs">
-          <a href="#" class="btn btn-default"><i class="fa fa-clock-o"></i>Fecha de publicacion</a>
-          <a href="#/editarpubli/{{id}}" class="btn btn-warning"> Editar publicación</a>
-          <button ng-click="eliminar()" type="submit" class="btn btn-danger"><i class="fa fa-warning"></i> Eliminar publicación</button>
+          <i class="fa fa-clock-o"> Fecha de publicacion </i>
+        </div>
+        <div class="text-muted pull-right btn-group-xs">
+          <button ng-click="eliminar()" type="submit" class="btn btn-danger text-muted pull-right">
+            <i class="fa fa-warning"></i> Eliminar publicación</button>
+          <a href="#/editarpubli/{{id}}" class="btn btn-warning text-muted pull-right"> Editar publicación</a>
         </div>
         <h2>{{publicaciones.nombrepublicacion}}</h2></br>
         <h1 ng-show="false">{{n = publicaciones.descripcionpublicacion}}</h1>
@@ -78,7 +81,8 @@
                   <a class="btn btn-warning btn-xs" href="#/editarcomentario/{{numero}}"></i> Editar</a>
                   </span>
                   <p>
-                    {{a.textocomentario}}
+                    <h1 ng-show="false">{{z = a.textocomentario}}</h1>
+                    <td><div ng-bind-html="funcion2(z)"></div></td>
                   </p>
                 </div>
                 <div class="clearfix"></div>
@@ -86,13 +90,11 @@
             </li>
             <div class="clearfix"></div>
             <hr>
-            <form role="form" ng-submit="submit()">
-            <textarea  placeholder="Escribe un comentario" class="form-control"  name="name" rows="5" type="text"
-            ng-model="comentario"></textarea>
-            <br>
+
+              <textarea froala ng-model="comentario"></textarea>
             <button ng-click="agregarcomentario()" type="submit" class="btn btn-primary pull-right btn-outline btn-rounded">
               Agregar comentario</button>
-            </form>
+
           </ul>
         </div>
       </div>

@@ -3,6 +3,7 @@
     .controller('editarpubliCtrl',  ['$scope', '$routeParams', '$http',  '$location',
       function($scope, $routeParams, $http, $location){
         $scope.id = $routeParams.id;
+
         $http({
             method: 'GET',
             url: 'http://localhost:8080/proyectotbd2016/publicaciones/buscarpublicacionporid/'+$scope.id,
