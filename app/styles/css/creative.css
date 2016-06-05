@@ -3,6 +3,40 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+
+.hola{
+
+  padding-right: 350px;
+  margin-right: 350px;
+}
+ /*change breadcrumb separator to raquo symbol*/
+.breadcrumb > li + li:before {
+     content: "\00BB";
+     color: #aaa;
+}
+/*change breadcrumb links color*/
+.breadcrumb a {
+     color: #083c87;
+}
+
+.breadcrumb a:hover, a:focus{
+     text-decoration: none;
+     color: orange;
+}
+
+/*change active color*/
+.breadcrumb > .active {
+     color: #aaa;
+}
+/*change breadcrumb background color*/
+.breadcrumb {
+     background-color: white;
+     border-radius: 0;
+     -moz-border-radius: 0;
+     -webkit-border-radius: 0;
+     -o-border-radius: 0;
+}
+
  body{ margin-top:20px;}
 .glyphicon { margin-right:5px;}
 .rating .glyphicon {font-size: 22px;}

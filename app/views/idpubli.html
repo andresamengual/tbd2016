@@ -1,5 +1,10 @@
 <div ng-controller="idpubliCtrl"  id="cuerpo">
 
+  <ol class="breadcrumb">
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#/publicaciones">Publicaciones</a></li>
+    <li class="active">Publicación número {{id}}</li>
+  </ol>
 
 <div class="container">
   <ul class="media-list forum">
@@ -18,7 +23,7 @@
           <i class="fa fa-clock-o"> Fecha de publicacion </i>
         </div>
         <div class="text-muted pull-right btn-group-xs">
-          <button ng-click="eliminar()" type="submit" class="btn btn-danger text-muted pull-right">
+          <button class="btn btn-danger text-muted pull-right" data-toggle="modal" data-target="#myModal">
             <i class="fa fa-times"></i> Eliminar publicación</button>
           <a href="#/editarpubli/{{id}}" class="btn btn-warning text-muted pull-right"> Editar publicación</a>
         </div>
@@ -77,7 +82,7 @@
                   </span>
                   <h5 ng-show="false">{{numero = a.idComentario}}</h5>
                   <span class="text-muted pull-right">
-                  <small class="btn btn-danger btn-xs" ng-click="eliminarcomentario(numero)" type="submit">
+                  <small class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal2">
                   <i class="fa fa-times"></i> Eliminar</small>
                   </span>
                   <span class="text-muted pull-right">
@@ -89,6 +94,26 @@
                   </p>
                 </div>
                 <div class="clearfix"></div>
+                <!-- Modal -->
+                <div  class="modal fade hola" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel2">Eliminar comentario</h4>
+                      </div>
+                      <div class="modal-body">
+                        ¿Está seguro que desea eliminar permanentemente este comentario?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+                        <button  class="btn btn-danger"ng-click="eliminarcomentario(numero)" type="submit" data-dismiss="modal">Eliminar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
             <div class="clearfix"></div>
@@ -103,17 +128,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div class="container">
@@ -135,6 +149,32 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+<!-- Modal -->
+<div  class="modal fade hola" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Eliminar publicación</h4>
+      </div>
+      <div class="modal-body">
+        ¿Está seguro que desea eliminar permanentemente esta publicación?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+        <button  class="btn btn-danger" ng-click="eliminar()" type="submit" data-dismiss="modal">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 </div>

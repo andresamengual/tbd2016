@@ -1,4 +1,10 @@
 <div ng-controller="editarpubliCtrl as up" id="cuerpo">
+  <ol class="breadcrumb">
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#/publicaciones">Publicaciones</a></li>
+    <li><a href="#/idpubli/{{id}}">Publicación número {{id}}</a></li>
+    <li class="active">Editar publicación</li>
+  </ol>
   <h2 id="centrar">Editar publicaciones</h2>
   <form role="form" ng-submit="submit()">
   <div class="form-content">

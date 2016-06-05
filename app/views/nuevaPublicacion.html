@@ -1,4 +1,11 @@
 <div ng-controller="nuevaPublicacionCtrl as up" id="cuerpo">
+
+  <ol class="breadcrumb">
+    <li><a href="#">Inicio</a></li>
+    <li class="active">Nueva Publicación</li>
+	</ol>
+
+
   <h2 id="centrar">Nueva publicacion</h2>
   <form role="form" ng-submit="submit()">
   <div class="form-content">
@@ -7,7 +14,7 @@
       placeholder="Ingresar título de la publicación" ng-model="nombrepublicacion">
     </div>
     <div class="form-group">
-      <textarea froala ng-model="$parent.descripcionpublicacion"></textarea>  
+      <textarea froala ng-model="$parent.descripcionpublicacion"></textarea>
     </div>
     <div class="form-group text-center">
       <button ng-click="agregar()" type="submit" class="btn btn-primary btn-lg btn-outline btn-rounded">Agregar</button>

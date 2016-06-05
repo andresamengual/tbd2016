@@ -1,4 +1,10 @@
 <div ng-controller="editarcomentarioCtrl as up" id="cuerpo">
+  <ol class="breadcrumb">
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#/publicaciones">Publicaciones</a></li>
+    <li><a href="#/idpubli/{{publica.idPublicacion}}">Publicación número {{publica.idPublicacion}}</a></li>
+    <li class="active">Editar comentario</li>
+  </ol>
   <h2 id="centrar">Editar comentario</h2>
   <form role="form" ng-submit="submit()">
   <div class="form-content">
