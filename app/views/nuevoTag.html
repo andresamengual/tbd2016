@@ -1,4 +1,4 @@
-<div ng-controller="nuevoTagCtrl as up" id="cuerpo">
+<div ng-controller="nuevoTagCtrl" id="cuerpo">
 
   <ol class="breadcrumb">
     <li><a href="#">Inicio</a></li>
@@ -15,7 +15,34 @@
                   <ul class="list-group">
                       <li class="list-group-item" ng-repeat="a in tags">
                           {{a.nombretag}}
+                          <h4 ng-show="false">{{tagid2 = a.idTag }}</h4>
+                          <div class="text-muted pull-right btn-group-xs">
+                            <button class="btn btn-danger text-muted pull-right" data-toggle="modal" data-target="#myModal2">
+                              <i class="fa fa-times"></i> Eliminar</button>
+                          </div>
+                          <div class="clearfix"></div>
+                          <!-- Modal -->
+                          <div  class="modal fade hola" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                  <h4 class="modal-title" id="myModalLabel2">Eliminar comentario</h4>
+                                </div>
+                                <div class="modal-body">
+                                  ¿Está seguro que desea eliminar permanentemente este comentario?
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+                                  <button  class="btn btn-danger"ng-click="eliminar(tagid2)" type="submit" data-dismiss="modal">Eliminar</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                       </li>
+
                   </ul>
               </div>
           </div>
@@ -31,10 +58,15 @@
         <textarea name="name" class="form-control input-lg" rows="8" cols="130" ng-model="descripcion" placeholder="Ingresar descripcion de la etiqueta"></textarea>
       </div>
       <div class="form-group text-center">
-        <button ng-click="agregar()" type="submit" class="btn btn-primary btn-lg btn-outline btn-rounded">Agregar</button>
+        <button ng-click="agregar()" type="submit" class="btn btn-primary btn-outline btn-rounded">Agregar</button>
       </div>
     </div>
   </form>
+
+
+
+
+
 
 
 

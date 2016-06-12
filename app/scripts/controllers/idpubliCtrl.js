@@ -74,7 +74,7 @@ angular.module('angularSpa')
           method: 'POST',
           url: 'http://localhost:8080/proyectotbd2016/comentarios/crearcomentario',
           data: {
-            "usuario":{"idUsuario":"25"},
+            "usuario":{"idUsuario":"35"},
             "publicacion":{"idPublicacion":$scope.id} ,
             "textocomentario": $scope.comentario
           },
@@ -115,7 +115,7 @@ angular.module('angularSpa')
           method: 'POST',
           url: 'http://localhost:8080/proyectotbd2016/valoraciones/crearvaloracion',
           data: {
-            "usuario":{"idUsuario":"27"},
+            "usuario":{"idUsuario":"35"},
             "publicacion":{"idPublicacion":$scope.id} ,
             "valorvaloracion":$scope.valoracion
           },
@@ -144,7 +144,7 @@ angular.module('angularSpa')
     $scope.comprobarval = function (){
       $http({
           method: 'GET',
-          url: 'http://localhost:8080/proyectotbd2016/valoraciones/comprobarsielusuariohavalorado/'+$scope.id+'/27',
+          url: 'http://localhost:8080/proyectotbd2016/valoraciones/comprobarsielusuariohavalorado/'+$scope.id+'/35',
        }).success(function(data){
           $scope.comprobar = data;
           if($scope.comprobar == 1){

@@ -13,8 +13,8 @@
               method: 'POST',
               url: 'http://localhost:8080/proyectotbd2016/publicaciones/crearpublicacion',
               data: {
-                "usuario":{"idUsuario":"30"},
-                 "prioridadPublicacion":{"idPrioridadpublicacion":"31"},
+                "usuario":{"idUsuario":"35"},
+                 "prioridadPublicacion":{"idPrioridadpublicacion":"36"},
                  "nombrepublicacion":$scope.nombrepublicacion,
                  "descripcionpublicacion":$scope.descripcionpublicacion
               },
