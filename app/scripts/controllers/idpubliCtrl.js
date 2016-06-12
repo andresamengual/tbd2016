@@ -65,7 +65,7 @@ angular.module('angularSpa')
           method: 'POST',
           url: 'http://localhost:8080/proyectotbd2016/comentarios/crearcomentario',
           data: {
-            "usuario":{"idUsuario":"23"},
+            "usuario":{"idUsuario":"25"},
             "publicacion":{"idPublicacion":$scope.id} ,
             "textocomentario": $scope.comentario
           },
@@ -106,7 +106,7 @@ angular.module('angularSpa')
           method: 'POST',
           url: 'http://localhost:8080/proyectotbd2016/valoraciones/crearvaloracion',
           data: {
-            "usuario":{"idUsuario":"20"},
+            "usuario":{"idUsuario":"27"},
             "publicacion":{"idPublicacion":$scope.id} ,
             "valorvaloracion":$scope.valoracion
           },
@@ -115,7 +115,7 @@ angular.module('angularSpa')
           $scope.comprobarval();
         },
         function(error,status,headers,config){
-          $scope.status = 'Error al comentar';
+          $scope.status = 'Error al valorar';
           alert("Error al valorar");
           $scope.comentario = "";
           console.log(error);
@@ -128,18 +128,19 @@ angular.module('angularSpa')
           url: 'http://localhost:8080/proyectotbd2016/valoraciones/promediodevaloraciondeunapublicacion/'+$scope.id,
        }).success(function(data){
           $scope.valoracion = data;
-          alert($scope.valoracion);
+          console.log($scope.valoracion);
       }).error(function(){
       });
     }
     $scope.comprobarval = function (){
       $http({
           method: 'GET',
-          url: 'http://localhost:8080/proyectotbd2016/valoraciones/comprobarsielusuariohavalorado/'+$scope.id+'/20',
+          url: 'http://localhost:8080/proyectotbd2016/valoraciones/comprobarsielusuariohavalorado/'+$scope.id+'/27',
        }).success(function(data){
           $scope.comprobar = data;
           if($scope.comprobar == 1){
             $scope.mostrar = false;
+            $scope.valoracionpubli();
           }
       }).error(function(){
       });
@@ -148,9 +149,6 @@ angular.module('angularSpa')
     $scope.mostrarpublicaciones();
     $scope.mostrarcomentario();
     $scope.comprobarval();
-    if($scope.mostrar == false){
-        $scope.valoracionpubli();
-    }
 
 
 

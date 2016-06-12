@@ -4,6 +4,11 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+
+#centrar{
+  text-align: center;
+}
+
 .hola{
 
   padding-right: 350px;
