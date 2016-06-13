@@ -34,6 +34,10 @@
               templateUrl: 'views/editarcomentario.html',
               controller: 'editarcomentarioCtrl'
           })
+          .when('/nuevoTag', {
+              templateUrl: 'views/nuevoTag.html',
+              controller: 'nuevoTagCtrl'
+          })
         .otherwise({
             redirectTo: '/home'
           });
