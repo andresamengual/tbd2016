@@ -16,8 +16,34 @@
     <div class="form-group">
       <textarea froala ng-model="$parent.descripcionpublicacion"></textarea>
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Selecciona las etiquetas relacionadas con la publicación</div>
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="a in tags">
+                            {{a.nombretag}}
+                            <div class="material-switch pull-right">
+                                <div ng-show="false">{{ tagid = a.idTag}}</div>
+                                <input id={{a.nombretag}} type="checkbox" ng-click="agregartag(tagid)"/>
+                                <label for={{a.nombretag}} class="label-primary"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="form-group text-center">
       <button ng-click="agregar()" type="submit" class="btn btn-primary btn-lg btn-outline btn-rounded">Agregar</button>
     </div>
   </form>
+
+
+
 </div>
