@@ -18,7 +18,16 @@ angular.module('angularSpa')
            return $sce.trustAsHtml(z);
     };
 
-
+    $scope.obtenertags = function (){
+      $http({
+          method: 'GET',
+          url: 'http://localhost:8080/proyectotbd2016/publicaciontags/obtenertagsdeunapublicacion/'+$scope.id,
+       }).success(function(data){
+          $scope.tagsdepublicacion = data;
+      }).error(function(){
+          alert("error al cargar tags de la publicacion");
+      });
+    }
     $scope.mostrarpublicaciones = function (){
       $http({
           method: 'GET',
@@ -147,6 +156,7 @@ angular.module('angularSpa')
     }
 
     $scope.mostrarpublicaciones();
+    $scope.obtenertags();
     $scope.mostrarcomentario();
     $scope.comprobarval();
 
