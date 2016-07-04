@@ -18,6 +18,10 @@
             templateUrl: 'views/publicaciones.html',
             controller: 'publicacionesCtrl'
           })
+          .when('/perfil', {
+              templateUrl: 'views/perfil.html',
+              controller: 'perfilCtrl'
+            })
           .when('/idpubli/:id', {
               templateUrl: 'views/idpubli.html',
               controller: 'idpubliCtrl'

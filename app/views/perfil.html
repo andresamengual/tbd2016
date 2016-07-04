@@ -1,0 +1,100 @@
+<div ng-controller="perfilCtrl" id="cuerpo">
+
+  <ol class="breadcrumb">
+    <li><a href="#">Inicio</a></li>
+    <li class="active">Perfil</li>
+  </ol>
+
+<div class="container">
+  <h1 class="page-header">Editar perfil</h1>
+  <div class="row">
+    <!-- left column -->
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="text-center">
+        <img src="http://snipplicious.com/images/guest.png" width="120"  class="avatar img-circle img-thumbnail" alt="avatar">
+        <h6>Cambiar imagen...</h6>
+        <input type="file" class="text-center center-block well well-sm">
+      </div>
+    </div>
+    <!-- edit form column -->
+    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+      <div class="alert alert-info alert-dismissable">
+        <a class="panel-close close" data-dismiss="alert">×</a>
+        <i class="fa fa-coffee"></i>
+        Recuerda que las publicaciones recomendadas se basan en tus <strong>Preferencias</strong>.
+      </div>
+      <h3>Información personal</h3></br></br>
+      <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label class="col-lg-3 control-label perfil">Nombre:</label>
+        <div class="col-lg-8">
+          <input class="form-control" value="Juan" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-3 control-label perfil">Apellido:</label>
+        <div class="col-lg-8">
+          <input class="form-control" value="Perez" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-3 control-label perfil">Correo:</label>
+        <div class="col-lg-8">
+          <input class="form-control" value="JuanPerez@gmail.com" type="text">
+        </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label perfil">Contraseña:</label>
+          <div class="col-md-8">
+            <input class="form-control" value="123456" type="password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label perfil">Preferencia:</label>
+          <div class="col-lg-8">
+            <div class="ui-select">
+              <select id="myselect" class="form-control">
+                <option ng-repeat="a in tags" value="valor">{{a.nombretag}}</option>
+
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input  data-toggle="modal" data-target="#myModal2" class="btn btn-primary" value="Guardar cambios" type="button">
+            <span></span>
+            <input class="btn btn-default" value="Cancelar" type="reset">
+          </div>
+        </div>
+      </form>
+
+      <!-- Modal -->
+      <div  class="modal fade hola" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel2">Eliminar comentario</h4>
+            </div>
+            <div class="modal-body">
+              ¿Está seguro que desea editar sus datos de perfil?
+            </div>
+            <div class="modal-footer">
+              <button  class="btn btn-primary" ng-click="agregar()" type="submit" data-dismiss="modal">Guardar cambios</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+</div>
