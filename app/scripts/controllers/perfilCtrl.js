@@ -3,7 +3,7 @@ angular.module('angularSpa')
 .controller('perfilCtrl', ['$scope', '$routeParams', '$http', '$location',
   function($scope, $routeParams, $http, $location) {
 
-    $scope.id = 3;
+    $scope.id = 36;
     $scope.valor = "inicio";
     $scope.mostrartags = function (){
       $http({

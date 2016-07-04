@@ -1,10 +1,54 @@
-<div class="intro">
-      <div class="intro-body">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-8 col-md-offset-2">
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+<div  ng-controller="MainCtrl as up"  id="portada">
+  <br>
+  <aside class="nav_user">
+		<br>
+		<section class= "user">
+			<img class = "img_user" src="http://snipplicious.com/images/guest.png">
+			<p> &nbsp;&nbsp;&nbsp;Juan Perez</p>
+      <p> &nbsp;&nbsp;&nbsp;Estudiante</p>
+		</section>
+		<br>
+		<div class="section">
+			<hr class="normal_line">
+			publicaciones recientes
+      <table class="">
+        <tbody>
+          <tr ng-repeat="a in publicaciones | orderBy:'id':true">
+            <td class="text-center"><i></i></td>
+            <td>
+              <h4><a href="#/idpubli/{{a.idPublicacion}}">{{a.nombrepublicacion}}</a></h4>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+		</div>
+
+	</aside>
+	<section class= "section">
+		<hr class="normal_line">
+		<h2>Publicaciones recomendadas</h2>
+    <hr class="normal_line">
+    <table class="table forum table-striped">
+      <thead>
+        <tr>
+          <th class="cell-stat"></th>
+          <th>
+            <h3>Titulo</h3>
+          </th>
+          <th class="cell-stat text-center hidden-xs hidden-sm"></th>
+          <th class="cell-stat-2x hidden-xs hidden-sm">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="a in recomendaciones | orderBy:'id':true">
+          <td class="text-center"><i></i></td>
+          <td>
+            <h4><a href="#/idpubli/{{a.idPublicacion}}">{{a.nombrepublicacion}}</a></h4>
+          </td>
+          <td class="text-center hidden-xs hidden-sm"></td>
+          <td class="hidden-xs hidden-sm"><i class="fa fa-clock-o"></i> 03 - 07 - 2016</td>
+        </tr>
+      </tbody>
+    </table>
+	</section>
+</div>

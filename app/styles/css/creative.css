@@ -3,6 +3,45 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+ #portada{
+   position: relative;
+   top: 70px;
+ }
+
+ .nav_user{
+    background-color:#eeeeee;
+    height:100%;
+    width:28%;
+    float:right;
+    padding:2%;
+}
+.section {
+    width:72%;
+    float:left;
+    padding:2%;
+}
+.user {
+    width:62%;
+    float:left;
+    padding:2%;
+}
+.img_user {
+	height:80px;
+    width:80px;
+    float:left;
+}
+.main_img_pref {
+    width:91%;
+    height:256px;
+    float:left;
+    padding:2%;
+}
+.main_img_conf {
+    width:32px;
+    height:32px;
+    float:right;
+}
+
 .perfil{
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
      font-size: 14px;
@@ -769,7 +808,7 @@ body {
 .intro {
     display: table;
     width: 100%;
-    height: 683px;
+    height: 300px;
     padding: 100px 0;
     text-align: center;
     color: #fff;
