@@ -43,7 +43,7 @@ angular.module('angularSpa')
     $scope.buscar = function (){
       $http({
           method: 'GET',
-          url: 'http://localhost:8080/proyectotbd2016/publicaciontags/obtenerpublicacionesconunmismotag/9',
+          url: 'http://localhost:8080/proyectotbd2016/publicaciontags/obtenerpublicacionesconunmismotag/'+$scope.tagid,
        }).success(function(data){
           $scope.recomendaciones = data;
       }).error(function(){
@@ -51,7 +51,6 @@ angular.module('angularSpa')
       });
     }
 
-    $scope.nombrebuscar = "";
     $scope.mostrarpublicaciones();
 
 

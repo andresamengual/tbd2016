@@ -41,6 +41,24 @@ angular.module('angularSpa')
       });
     }
 
+    $scope.busqueda = function (){
+      $http({
+          method: 'POST',
+          url: 'http://localhost:8080/proyectotbd2016/publicaciones/lucene',
+          data: {
+            "String":$scope.nombrebuscar,
+          },
+          headers: {'Content-Type': 'application/json'}
+        }).then(function(data,status,headers,config){
+            $scope.publicaciones = data;
+            console.log($scope.publicaciones);
+        },
+        function(error,status,headers,config){
+          $scope.status = 'Error al buscar';
+          alert("Error al agregar");
+          console.log(error);
+        });
+    }
     $scope.nombrebuscar = "";
     $scope.mostrarpublicaciones();
 

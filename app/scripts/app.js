@@ -1,7 +1,7 @@
 (function(){
 
     angular.module('angularSpa', [
-    'ngRoute', 'froala', 'ngSanitize'
+    'ngRoute', 'froala', 'ngSanitize',
     ])
     .value('froalaConfig', {
     toolbarInline: false,
